@@ -4,10 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.osu.ui.navigation.BottomNavItem
+import com.example.osu.ui.navigation.BottomNavigationBar
+import com.example.osu.ui.navigation.Navigation
 import com.example.osu.ui.theme.OsuTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,9 +22,40 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             OsuTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                val navController = rememberNavController()
+                Scaffold(
+                    bottomBar = {
+                        BottomNavigationBar(
+                            items = listOf(
+                                BottomNavItem(
+                                    name = "Dashboard",
+                                    route = "dashboard",
+                                    icon = Icons.Rounded.Dashboard
+                                ),
+                                BottomNavItem(
+                                    name = "Workout",
+                                    route = "workout",
+                                    icon = Icons.Rounded.PlayArrow
+                                ),
+                                BottomNavItem(
+                                    name = "Exercises",
+                                    route = "exercises",
+                                    icon = Icons.Rounded.FitnessCenter
+                                ),
+                                BottomNavItem(
+                                    name = "Profile",
+                                    route = "profile",
+                                    icon = Icons.Rounded.AccountCircle
+                                )
+                            ),
+                            navController = navController,
+                            onItemClick = {
+                                navController.navigate(it.route)
+                            }
+                        )
+                    }
+                ) {
+                    Navigation(navController = navController)
                 }
             }
         }
