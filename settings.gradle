@@ -8,3 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Osu"
 include ':app'
+include ':mvi'
+include ':retrofit-extensions'
+include ':shared'
