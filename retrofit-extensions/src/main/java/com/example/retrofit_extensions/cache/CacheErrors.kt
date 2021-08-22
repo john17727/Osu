@@ -1,4 +1,4 @@
-package com.john.mvi.domain.cache
+package com.example.retrofit_extensions.cache
 
 object CacheErrors {
     const val  CACHE_ERROR_UNKNOWN = "Unknown cache error"

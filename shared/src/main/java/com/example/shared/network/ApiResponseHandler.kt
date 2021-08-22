@@ -1,11 +1,11 @@
-package com.john.mvi.data.network
+package com.example.shared.network
 
 import com.john.mvi.domain.message.MessageType
 import com.john.mvi.domain.message.StateMessage
 import com.john.mvi.domain.message.UIComponentType
-import com.john.mvi.domain.network.ApiResult
-import com.john.mvi.domain.network.NetworkErrors.NETWORK_DATA_NULL
-import com.john.mvi.domain.network.NetworkErrors.NETWORK_ERROR
+import com.example.retrofit_extensions.network.ApiResult
+import com.example.retrofit_extensions.network.NetworkErrors.NETWORK_DATA_NULL
+import com.example.retrofit_extensions.network.NetworkErrors.NETWORK_ERROR
 import com.john.mvi.domain.state.DataState
 import com.john.mvi.domain.state.StateEvent
 
@@ -39,7 +39,7 @@ abstract class ApiResponseHandler<ViewState, Data>(
             }
             is ApiResult.Success -> {
                 response.value?.let {
-                    handleSuccess(resultObj = response.value)
+                    handleSuccess(resultObj = it)
                 }?: DataState.error(
                     message = StateMessage(
                         message = "${stateEvent?.errorInfo()}\n\nReason: $NETWORK_DATA_NULL",

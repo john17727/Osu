@@ -1,7 +1,7 @@
-package com.john.mvi.data.cache
+package com.example.shared.cache
 
-import com.john.mvi.domain.cache.CacheErrors.CACHE_DATA_NULL
-import com.john.mvi.domain.cache.CacheResult
+import com.example.retrofit_extensions.cache.CacheErrors.CACHE_DATA_NULL
+import com.example.retrofit_extensions.cache.CacheResult
 import com.john.mvi.domain.message.MessageType
 import com.john.mvi.domain.message.StateMessage
 import com.john.mvi.domain.message.UIComponentType
@@ -28,7 +28,7 @@ abstract class CacheResponseHandler<ViewState, Data>(
 
             is CacheResult.Success -> {
                 response.value?.let {
-                    handleSuccess(resultObj = response.value)
+                    handleSuccess(resultObj = it)
                 } ?: DataState.error(
                     message = StateMessage(
                         message = "${stateEvent?.errorInfo()}\n\nReason: $CACHE_DATA_NULL",

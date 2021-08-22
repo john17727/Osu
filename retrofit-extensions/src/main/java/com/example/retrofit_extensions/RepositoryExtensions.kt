@@ -1,12 +1,12 @@
 package com.john.mvi.data.util
 
-import com.john.mvi.domain.cache.CacheErrors.CACHE_ERROR_TIMEOUT
-import com.john.mvi.domain.cache.CacheErrors.CACHE_ERROR_UNKNOWN
-import com.john.mvi.domain.cache.CacheResult
-import com.john.mvi.domain.network.ApiResult
-import com.john.mvi.domain.network.NetworkErrors.NETWORK_ERROR_TIMEOUT
-import com.john.mvi.domain.network.NetworkErrors.NETWORK_ERROR_UNKNOWN
-import com.john.mvi.domain.util.GenericErrors.ERROR_UNKNOWN
+import com.example.retrofit_extensions.GenericErrors.ERROR_UNKNOWN
+import com.example.retrofit_extensions.cache.CacheErrors.CACHE_ERROR_TIMEOUT
+import com.example.retrofit_extensions.cache.CacheErrors.CACHE_ERROR_UNKNOWN
+import com.example.retrofit_extensions.cache.CacheResult
+import com.example.retrofit_extensions.network.ApiResult
+import com.example.retrofit_extensions.network.NetworkErrors.NETWORK_ERROR_TIMEOUT
+import com.example.retrofit_extensions.network.NetworkErrors.NETWORK_ERROR_UNKNOWN
 import kotlinx.coroutines.*
 import retrofit2.HttpException
 import java.io.IOException

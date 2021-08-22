@@ -12,7 +12,7 @@ import com.john.mvi.domain.message.UIComponentType
 import com.john.mvi.domain.state.DataState
 import com.john.mvi.domain.state.StateEvent
 import com.john.mvi.domain.state.ViewState
-import com.john.mvi.domain.util.GenericErrors
+import com.example.retrofit_extensions.GenericErrors
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collect
@@ -77,7 +77,7 @@ abstract class IntentViewModel<Event : StateEvent, UiState : ViewState> : ViewMo
         emit(
             DataState.error(
                 message = StateMessage(
-                    message = GenericErrors.INVALID_STATE_EVENT,
+                    message = com.example.retrofit_extensions.GenericErrors.INVALID_STATE_EVENT,
                     uiComponentType = UIComponentType.None,
                     messageType = MessageType.Error
                 ),

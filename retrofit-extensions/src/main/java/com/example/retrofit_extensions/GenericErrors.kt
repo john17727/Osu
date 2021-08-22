@@ -1,4 +1,4 @@
-package com.john.mvi.domain.util
+package com.example.retrofit_extensions
 
 object GenericErrors {
     const val ERROR_UNKNOWN = "Unknown error"

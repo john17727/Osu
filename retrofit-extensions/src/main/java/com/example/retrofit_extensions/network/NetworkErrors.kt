@@ -1,4 +1,4 @@
-package com.john.mvi.domain.network
+package com.example.retrofit_extensions.network
 
 object NetworkErrors {
 

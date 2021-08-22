@@ -1,4 +1,4 @@
-package com.john.mvi.domain.cache
+package com.example.retrofit_extensions.cache
 
 sealed class CacheResult<out T> {
 
