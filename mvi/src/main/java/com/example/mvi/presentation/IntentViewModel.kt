@@ -52,11 +52,11 @@ abstract class IntentViewModel<ViewState> : ViewModel() {
         )
     }
 
-    fun emitInvalidStateEvent(stateEvent: StateEvent) = flow {
+    fun emitInvalidStateEvent(stateEvent: StateEvent, message: String) = flow {
         emit(
             DataState.error<ViewState>(
                 message = StateMessage(
-                    message = com.example.retrofit_extensions.GenericErrors.INVALID_STATE_EVENT,
+                    message = message,
                     uiComponentType = UIComponentType.None,
                     messageType = MessageType.Error
                 ),

@@ -3,9 +3,7 @@ package com.example.osu
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.*
@@ -16,7 +14,9 @@ import com.example.osu.ui.navigation.BottomNavItem
 import com.example.osu.ui.navigation.BottomNavigationBar
 import com.example.osu.ui.navigation.Navigation
 import com.example.osu.ui.theme.OsuTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
